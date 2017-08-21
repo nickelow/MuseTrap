@@ -516,14 +516,7 @@ class Main extends React.Component {
         samplesOnTheBoard={this.state.sequence.map(sample => sample.sampleIndex)}
 
       />
-<<<<<<< HEAD
-=======
-=======
->>>>>>> d4cef92d1d77b35691ebe0a9959b6657a7fd877e
 
-
-    return(
-    <div id="container">
       <NaviBar loggedIn={this.props.loggedIn} loginCB={this.loginCB.bind(this)} creatAcctCB={this.createAcctCB.bind(this)} logoutCB={this.logoutCB.bind(this)}/>
       <SampleLibrary beatToRegister={this.state.beatToRegister} samples={this.state.samples} sampleClick={this.playSampleFromLibrary} doubleClick={this.sampleDoubleClickHandler} />
       <ControlPanel
