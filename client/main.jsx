@@ -501,6 +501,7 @@ class Main extends React.Component {
 
 
   render() {
+
     var welcomeUsername = this.props.loggedIn &&
       <div>Welcome {this.state.username}</div>;
     return(
@@ -519,6 +520,13 @@ class Main extends React.Component {
         registerSample={this.addSampleToBoard}
 
       />
+=======
+
+
+    return(
+    <div id="container">
+      <NaviBar loggedIn={this.props.loggedIn} loginCB={this.loginCB.bind(this)} creatAcctCB={this.createAcctCB.bind(this)} logoutCB={this.logoutCB.bind(this)}/>
+      <SampleLibrary beatToRegister={this.state.beatToRegister} samples={this.state.samples} sampleClick={this.playSampleFromLibrary} doubleClick={this.sampleDoubleClickHandler} />
       <ControlPanel
         bpm={this.state.bpm}
         loopButton={this.state.loopButton}
@@ -571,8 +579,8 @@ Routes = () =>(
 </Router> )
 
 //This event listener is needed or else the reactdom render will cause mocha test to fail
-document.addEventListener('DOMContentLoaded', function() {
-  ReactDOM.render(<Routes></Routes>, document.getElementById('main'));
-});
+// document.addEventListener('DOMContentLoaded', function() {
+//   ReactDOM.render(<Routes></Routes>, document.getElementById('main'));
+// });
 
 export default Main;
