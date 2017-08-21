@@ -496,6 +496,7 @@ class Main extends React.Component {
 
 
   render() {
+<<<<<<< HEAD
     var welcomeUsername = this.props.loggedIn &&
       <div>Welcome {this.state.username}</div>;
     return(
@@ -515,6 +516,13 @@ class Main extends React.Component {
         samplesOnTheBoard={this.state.sequence.map(sample => sample.sampleIndex)}
 
       />
+
+
+    return(
+    <div style=id="container">
+      <NaviBar loggedIn={this.props.loggedIn} loginCB={this.loginCB.bind(this)} creatAcctCB={this.createAcctCB.bind(this)} logoutCB={this.logoutCB.bind(this)}/>
+      <SampleLibrary beatToRegister={this.state.beatToRegister} samples={this.state.samples} sampleClick={this.playSampleFromLibrary} doubleClick={this.sampleDoubleClickHandler} />
+>>>>>>> test
       <ControlPanel
         bpm={this.state.bpm}
         loopButton={this.state.loopButton}
