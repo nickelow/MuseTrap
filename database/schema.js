@@ -4,8 +4,18 @@ var Promise = require('bluebird');
 var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
                 replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };  
 
-var mongodbUri = 'mongodb://heroku_tkrwhxb3:ljk1iikq8pag0rcusofkbir363@ds149613.mlab.com:49613/heroku_tkrwhxb3';
-mongoose.connect(mongodbUri, options);
+var theport = process.env.PORT || 5000;
+
+var uristring =  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL || 'mongodb://localhost/musetrap';
+
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+  console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+  console.log ('Succeeded connected to: ' + uristring);
+  }
+});
 
 var db = mongoose.connection;
 db.on('error', console.error);
