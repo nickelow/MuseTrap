@@ -26,6 +26,8 @@
     "express-session": "^1.15.5",
     "heroku": "^0.2.0",
     "howler": "^2.0.4",
+    "jsdom": "^11.1.0",
+    "jsdom-global": "^3.0.2",
     "mongo": "^0.1.0",
     "mongoose": "^4.11.6",
     "nodemon": "^1.11.0",
