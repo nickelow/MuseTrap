@@ -342,8 +342,14 @@ class Main extends React.Component {
     }
   }
 
-  render() {return(
-    <div id="container">
+  render() {
+    
+    var style = {
+      backgroundColor: '#175291'
+    }
+
+    return(
+    <div style={style} id="container">
       <NaviBar loggedIn={this.props.loggedIn} loginCB={this.loginCB.bind(this)} creatAcctCB={this.createAcctCB.bind(this)} logoutCB={this.logoutCB.bind(this)}/>
       <SampleLibrary beatToRegister={this.state.beatToRegister} samples={this.state.samples} sampleClick={this.playSampleFromLibrary} doubleClick={this.sampleDoubleClickHandler} />
       <ControlPanel

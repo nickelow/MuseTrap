@@ -12,7 +12,6 @@ db.on('error', console.error);
 var Schema = mongoose.Schema;
 
 var sequenceSchema = new Schema ({
-  id: {type:Schema.Types.ObjectId, unique: true},
   user: String,
   sequenceRows: [{}],
   shareable: {type: Boolean, default: false}
