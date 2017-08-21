@@ -496,6 +496,7 @@ class Main extends React.Component {
 
 
   render() {
+
     var welcomeUsername = this.props.loggedIn &&
       <div>Welcome {this.state.username}</div>;
     return(
@@ -515,6 +516,10 @@ class Main extends React.Component {
         samplesOnTheBoard={this.state.sequence.map(sample => sample.sampleIndex)}
 
       />
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> d4cef92d1d77b35691ebe0a9959b6657a7fd877e
 
 
     return(
@@ -561,5 +566,6 @@ const Routes = () => (
     <Route exact path="/users/:username/:sequenceObjID" render={(props) => <Main loggedIn={false} username={props.match.params.username} sequenceObjID={props.match.params.sequenceObjID}/>}/>
   </Switch>
 </Router> )
+
 
 export default Main;
