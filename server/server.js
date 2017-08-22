@@ -337,6 +337,6 @@ if (!module.parent) {
 }
 
 module.exports={
-  app: app
-  //db: db.db
+  app: app,
+  db: db.db
 }

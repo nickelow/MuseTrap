@@ -496,6 +496,7 @@ class Main extends React.Component {
 
 
   render() {
+
     var welcomeUsername = this.props.loggedIn &&
       <div style={{color: 'white', margin: '20px 30px'}}>Welcome {this.state.username}</div>;
     return(
@@ -515,6 +516,9 @@ class Main extends React.Component {
         samplesOnTheBoard={this.state.sequence.map(sample => sample.sampleIndex)}
 
       />
+
+      <NaviBar loggedIn={this.props.loggedIn} loginCB={this.loginCB.bind(this)} creatAcctCB={this.createAcctCB.bind(this)} logoutCB={this.logoutCB.bind(this)}/>
+      <SampleLibrary beatToRegister={this.state.beatToRegister} samples={this.state.samples} sampleClick={this.playSampleFromLibrary} doubleClick={this.sampleDoubleClickHandler} />
       <ControlPanel
         bpm={this.state.bpm}
         loopButton={this.state.loopButton}
@@ -546,18 +550,8 @@ class Main extends React.Component {
   }
 }
 
-/**
-* Routes is setup so that Main component is able to render slightly differently for these 3 situations
-*  Not logged in at root /; demo mode only
-*  Logged in to /member; can save and share sequences
-*    If loggedIn===true, Main component should render extra things such as User's saved seqeunces in a list
-*    on the righthand side
-*    Also, the top navbar should change to a "logout" button
-*  Sharing /users/:username/:sequenceObjID; same as demo mode but with shared sequence loaded on the player
-* @constructor
-*/
-const
-Routes = () =>(
+
+const Routes = () => (
   <Router>
   <Switch>
     <Route exact path="/" render={() => <Main loggedIn={false}/>}/>
@@ -566,9 +560,5 @@ Routes = () =>(
   </Switch>
 </Router> )
 
-//This event listener is needed or else the reactdom render will cause mocha test to fail
-document.addEventListener('DOMContentLoaded', function() {
-  ReactDOM.render(<Routes></Routes>, document.getElementById('main'));
-});
 
 export default Main;
