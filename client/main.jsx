@@ -498,7 +498,7 @@ class Main extends React.Component {
   render() {
 
     var welcomeUsername = this.props.loggedIn &&
-      <div>Welcome {this.state.username}</div>;
+      <div style={{color: 'white', margin: '20px 30px'}}>Welcome {this.state.username}</div>;
     return(
     <div id="container">
       <NaviBar

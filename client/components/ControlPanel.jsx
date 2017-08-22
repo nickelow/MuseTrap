@@ -21,23 +21,23 @@ var ControlPanel = (props) => {
   // var saveButton = <Button style={{display: 'inline'}}> Save </Button>;
   // var shareButton = <Button style={{display: 'inline'}}> Share </Button>;
   var saveButton = props.loggedIn &&
-    <Button bsStyle="primary" bsSize="large" active
+    <Button className="col-lg-12" bsStyle="primary" bsSize="large" active
       onClick={()=>{props.saveClicked()}}>save</Button>;
+  var inLineStyle={"textAlign":'center', "height":40, "margin" : 'auto', "fontSize" : 20, "padding" : 5};
   return (
     <div className="container">
       <div className="row">
-
-        <Button lg={1} bsStyle={props.playstatus ? "warning" : "primary" } bsSize="large" active
-          onClick={()=>{props.playClicked()}}><Glyphicon glyph="play"/></Button>
-        <Button lg={1} bsStyle="primary" bsSize="large" active
+        <Button className="col-lg-2" bsStyle={props.playstatus ? "warning" : "primary" } bsSize="large" active
+          onClick={()=>{props.playClicked()}}><Glyphicon glyph="play"/></Button>    
+        <Button className="col-lg-2" bsStyle="primary" bsSize="large" active
           onClick={()=>{props.stopClicked()}}><Glyphicon glyph="stop"/></Button>
-        <Button lg={1} bsStyle={props.loopButton? "warning" : "success"} bsSize="large" active
+        <Button className="col-lg-2" bsStyle={props.loopButton? "warning" : "success"} bsSize="large" active
           onClick={()=>{props.loopClicked()}}><Glyphicon glyph="repeat"/></Button>
+        <div className="col-lg-2 bg-warning" style={inLineStyle} >BPM {props.bpm}</div>
+        <input className="col-lg-2" style={{height:40}}  id="bpm"  type="number" name="bpm" min="60" max="999" />
+        <Button className="col-lg-2" style={{height:40}} bsStyle={"default"} bsSize="large" active
+          onClick={()=>{props.changeBPM()}}>Update BPM</Button>
         {saveButton}
-        BPM {props.bpm}
-        <input className="col-lg-1" id="bpm"  type="number" name="bpm" min="60" max="999" />
-        <input className="col-lg-1" type="submit" value="Change" onClick={()=>{props.changeBPM()}} />
-        
       </div>
     </div>
   );

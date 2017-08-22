@@ -12,7 +12,8 @@
   "scripts": {
     "compile": "webpack",
     "test": "mocha test/helpers/browser.js --bail --reporter nyan test/*.js; pkill -n node;",
-    "start": "nodemon server/server.js"
+    "start": "node server/server.js ",
+    "startNodemon": "nodemon server/server.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
@@ -31,7 +32,6 @@
     "jsdom": "^11.1.0",
     "jsdom-global": "^3.0.2",
     "mongo": "^0.1.0",
-    "mongoose": "^4.11.6",
     "nodemon": "^1.11.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -59,6 +59,7 @@
     "jsdom": "^11.1.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^3.5.0",
+    "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.6.0",
     "react-test-renderer": "^15.6.1",
     "sinon": "^3.2.1",

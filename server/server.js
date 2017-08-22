@@ -24,7 +24,7 @@ app.use(
   session({
     secret: 'i like to code and eat food',
     store: new MongoStore({
-      url: 'mongodb://localhost/session'
+      url: process.env.MONGODB_URI || 'mongodb://localhost/session'
     }),
     saveUninitialized: false,
     resave: false

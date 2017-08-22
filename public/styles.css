@@ -1,72 +1,117 @@
 /* SAMPLE BUTTONS */
-/*@media (max-width: 600px) {
-  .sampleLibraryBtn {
-    padding: 20px 0;
-    width: 80px;
-    height: 80px;
-    margin: 5px 0 ;
-}
-@media (min-width: 600px) {
-  .sampleLibraryBtn {
-    padding: 20px 0;
-    width: 80px;
-    height: 80px;
-    margin: 5px 0 ;
-  }
-}*/
 
 .sampleLibraryBtn {
   padding: 20px 0;
   width: 80px;
   height: 80px;
   margin: 5px 0 ;
+  background-color: white;
+  opacity: 0.2;
+  border: 0px
 }
 
-.btnPulse {
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
+.whiteFont {
+  color: white;
+  font-size: .9em;
+  letter-spacing: 1px;
 }
-@-webkit-keyframes greenPulse {
+
+.btnPulseOnce {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+}
+
+/* Consider refactoring to use CSS variables */
+
+/* GREEN */
+.green {
+  background-color: #749a02 !important;
+  opacity: 1;
+}
+
+.greenPulse {
+  -webkit-animation-name: greenAnimation;
+  opacity: 1;
+}
+
+@-webkit-keyframes greenAnimation {
   from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
   50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
   to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
 }
 
-.green {
-  -webkit-animation-name: greenPulse;
+/* RED */
+
+.red {
+  background-color: #ff0000 !important;
+  opacity: 1;
 }
 
-@-webkit-keyframes redPulse {
+.redPulse {
+  -webkit-animation-name: redAnimation;
+  opacity: 1;
+}
+
+@-webkit-keyframes redAnimation {
   from { background-color: #ff0000; -webkit-box-shadow: 0 0 9px #333; }
   50% { background-color: #bc2320; -webkit-box-shadow: 0 0 18px #bc2320; }
   to { background-color: #ff0000; -webkit-box-shadow: 0 0 9px #333; }
 }
 
-.red {
-  -webkit-animation-name: redPulse;
+/* BLUE */
+
+.blue {
+  background-color: #0000ff !important;
+  opacity: 1;
 }
 
-@-webkit-keyframes bluePulse {
+.bluePulse {
+  -webkit-animation-name: blueAnimation;
+  opacity: 1;
+}
+
+@-webkit-keyframes blueAnimation {
   from { background-color: #0000ff; -webkit-box-shadow: 0 0 9px #333; }
   50% { background-color: #0000c1; -webkit-box-shadow: 0 0 18px #0000c1; }
   to { background-color: #0000ff; -webkit-box-shadow: 0 0 9px #333; }
 }
 
-.blue {
-  -webkit-animation-name: bluePulse;
+/* Yellow */
+
+.yellow {
+  background-color: #ffff00 !important;
+  opacity: 1;
 }
 
-@-webkit-keyframes yellowPulse {
+.yellowPulse {
+  -webkit-animation-name: yellowAnimation;
+  opacity: 1;
+}
+
+@-webkit-keyframes yellowAnimation {
   from { background-color: #ffff00; -webkit-box-shadow: 0 0 9px #333; }
-  50% { background-color: #d8d800; -webkit-box-shadow: 0 0 18px #d8d800; }
+  50% { background-color: #e9e900; -webkit-box-shadow: 0 0 18px #e9e900; }
   to { background-color: #ffff00; -webkit-box-shadow: 0 0 9px #333; }
 }
 
-.yellow{
-  -webkit-animation-name: yellowPulse;
+
+/* Background Image */
+
+body {
+  background: url(imgs/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: transparent;
 }
 
-/* OTHER */
+/* savedSequences */
+
+.savedSequences {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
 
 .center {
   text-align: center;
